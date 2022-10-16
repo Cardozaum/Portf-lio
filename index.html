@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--Link copiado do GoogleFonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=VT323&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="./src/css/reset.css">
+    <link rel="stylesheet" href="./src/css/estilos.css"><!-- linkando com o arquivo CSS que vai estilizar esse HTML-->
+    <link rel="stylesheet" href="./src/css/rolagem.css"> <!-- Estilizar o scrollbar -->
+
+    <title>Portfólio - Lucas Ferreira Cardoso</title>
+</head>
+
+<body>
+    <main class="cartao">
+        <div class="minhas-informacoes">
+            <img src="./src/imagens/foto-perfil.jpg" alt="foto de perfil">
+            <!-- "alt" é só um "comentário" especificando o que é a imagem-->
+            <!-- o "./" começa a seleção de arquivos dentro das pastas. "CTRL+Espaço" reabre a seleção de pastas caso suma-->
+            <h1 class="nome">Lucas Ferreira Cardoso</h1>
+            <h2 class="cargo">Desenvolvedor Frontend Júnior</h2>
+        </div>
+
+        <div class="conteudo">
+            <ul class="abas">
+                <li class="aba selecionado" id="sobre-mim">
+                    <img src="./src/imagens/sobre.gif" alt="">
+                </li>
+                <li class="aba" id="minhas-redes">
+                    <img src="./src/imagens/coracao.gif" alt="">
+                </li>
+            </ul>
+
+            <div class="informacoes-abas">
+                <div class="informacao selecionado" id="informacao-sobre-mim ">
+                    <h3 class="sub-titulo">Sobre</h3>
+
+                    <div class="descricao">
+                        <p>Oi! Meu nome é Lucas Ferreira Cardoso, seja bem-vindo(a)</p>
+                        <p>
+                            Sou uma pessoa apaixonada pela programação. Sempre tive o sonho de trabalhar com programação
+                            e atualmente comecei a colocar esse sonho em prática estudando <span>HTML, CSS e
+                                JavaScript</span>. Gosto muito de café (até demais), e meus principais hobbies são
+                            musculação, música (adoro tocar piano) e descansar nos jogos de PC.
+                        </p>
+                        <!-- a tag "<spam>" é feita para estilizar trechos de texto dentro de um texto-->
+                    </div>
+
+                </div>
+
+                <div class="informacao" id="informacao-minhas-redes">
+                    <h3 class="sub-titulo">Minhas Redes</h3>
+
+                    <ul class="redes-sociais">
+                        <li>
+                            <a href="" target="_blank" class="curriculo">Currículo</a>
+                            <!-- Pode colocar o link do currículo do GoogleDosc, por exemplo.-->
+                        </li>
+                        <li>
+                            <a href="" target="_blank" class="linkedin">Linkedin</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank" class="github">GitHub</a>
+                        </li>
+                        <li>
+                            <a href="" target="_blank" class="instagram">Instagram</a>
+                        </li>
+                        <!-- O atributo "target='_blank'" serve para abrir o link da página em outra aba.
+                        Sem isso há a interrupção da navagação da minha página e isso não é legal!
+                    -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script src="/src/js/index.js"></script>
+</body>
+
+</html>

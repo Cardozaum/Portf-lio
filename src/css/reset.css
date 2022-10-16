@@ -1,0 +1,14 @@
+*{
+    margin: 0;
+    padding:0;
+    box-sizing: border-box;
+    /* Resetando o css pré-configurado do html*/
+}
+ul{
+    list-style: none; /* Tirar os "pontinhos" da listagem */
+}
+
+a{ /* "a" são os links de referência. */
+    text-decoration: none;
+    color: #000;
+}

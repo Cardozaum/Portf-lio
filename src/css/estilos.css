@@ -1,0 +1,232 @@
+/* 
+    A gente estiliza do mesmo jeito que a gente lê aqui no ocidente
+    Estilizamos os elementos de cima pra baixo e da esquerda para direita. 
+
+    Os elementos são alinhados pela esquerda automaticamente na maioria das vezes.
+    Podemos usar comandos para alinhas pelo topo, pelo centro, pela direita ou por baixo.
+*/
+
+body{
+    background-image: url(../imagens/fundo-site.jpg); 
+    /*  
+        Puxar o link url por "../" ao invés de apenas "./"
+        Os dois pontos antes da barra ("../") significa "voltar uma pasta anterior"
+        Se usar apenas um ponto ("./") o buscador ficará apenas na pasta "css"
+        É preciso voltar um passo pra acessar o buscador de pastas
+        Usando dois pontos vai aparecer "css" e "imagens"
+    */
+    background-repeat: no-repeat;
+    /*
+        "no-repeat" serve para que a imagem de fundo não se repita para preencher a tela
+        Como a imagem é muito grande, ela ocupará o espaço suficiente para quase todas as telas.
+    */
+    background-size: cover;
+    /*
+        para que a imagem de fundo cubra todo o body
+        Como a imagem é muito grande, a tela vai pegar apenas uma parte do tamanho total da imagem
+        Com o "cover" a imagem de fundo cobrirá melhor a tela aparencendo a imagem "toda" 
+    */
+    background-position: center;
+    /*
+        posicionamento a partir do centro.
+        Sem isso estaria alinhado à esquerda.
+    */
+    font-family: 'VT323', monospace;
+    color: #f3f3f3;
+    font-size: 18px;
+
+    /**/
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh; 
+    padding: 30px;
+    /* para o "align-items" funcionar ele precisa ter espaço suficiente. 
+       o "height" força uma altura maior para que possa haver um alinhamento 
+       o "min" do "min-height" é para telas pequenas. Sem o "min" a imagem corta o body.
+       Com o "min" o body fica alinhado e ao mesmo tempo traz um scroll para descer e ver a pagina toda
+    */
+}
+
+    /* 
+        seletores sempre SEM ACENTO
+        seletores de classe começam com ponto (".")
+    */
+
+.cartao{
+    background-color: #070d12;
+    width: 370px; /* largura do cartão*/
+    border: 2px solid #e126d9; /* Borda. Recebe 3 valores a borda. Na documentação fala a ordem de cada valor*/
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.abas img{
+    /*
+        No elemento HTML "abas" tem algumas imagens.
+        ".abas imag{}" significa estilizar todas as imagens que estão
+        no dentro da classe "abas" que está dentro do elemento HTML "ul". 
+    */
+    width: 30px;
+}
+.cartao .minhas-informacoes{ 
+    /*
+        Poderia ser apenas ".minhas-informacoes". Porém, posso ser mais específico também.
+        ".cartao .minhas-informacoes" significa que quero estilicar o "minhas informacoes"
+        que está dentro de "cartao".
+    */
+    padding-top: 20px;
+    display: flex;
+    flex-direction: column; /* organiza em coluna os itens. Troca para orientação horizontal*/
+    align-items: center;
+    gap: 10px; /*para espaçamento entre os itens.*/
+}
+
+/* 
+ .cartao .minhas-informacoes img{
+     height: 96px;
+     width: 150px;      Para redimensionar a imagem caso necessário
+                        dá para alterar a height e o width.
+ } 
+*/
+.cartao .minhas-informacoes img{
+    border-radius: 50px;
+    border: 4px solid #02d08f;
+    /* 
+        estilizando toda imagem ("img") que está dentro de ".minha informacoes"
+        que está dentro de ".cartao"    
+    */
+}
+.cartao .minhas-informacoes .nome{
+    font-size: 26px;
+}
+.cartao .minhas-informacoes .cargo{
+    font-size: 20px;
+    color: #b8bbc5;
+}
+
+.cartao .conteudo{
+    margin-top: 15px;
+}
+
+.cartao .conteudo .abas{
+    display: flex;
+}
+.cartao .abas .aba{
+    width: 50% ; /* a porcentagem coloca a largura de 50% da classe pai. Logo, dividiu em*/
+    display: flex;
+    justify-content: center;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.2 ease-in-out;
+}
+.cartao .abas img{
+    /*
+        No elemento HTML "abas" tem algumas imagens.
+        ".abas imag{}" significa estilizar todas as imagens que estão
+        no dentro da classe "abas" que está dentro do elemento HTML "ul". 
+    */
+    width: 30px;
+}
+.cartao .abas .aba.selecionado{
+    /*
+        o ".aba.selecionado" sem espaço é porque estamos estilizando
+        um elemento HTML que tem duas classas ( .aba e .selecionado) 
+    */
+    background-color: #262626;
+}
+
+.cartao .informacoes-abas{
+    background-color: #262626;
+}
+
+.cartao .abas .aba:hover{
+    background-color: #414141;
+}
+
+.informacoes-abas .informacao{
+    min-height: 260px;
+    padding: 15px;
+    display: none; /* "display" é a exibição. "none" faz com que não haja exibição. */
+}
+
+.informacoes-abas .sub-titulo{
+    font-size: 22px;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.informacoes-abas .informacao.selecionado{
+    display: block;
+}
+
+.informacoes-abas .descricao{
+    font-size: 20px;
+    max-height: 180px; 
+    overflow-y: auto; /* o "auto" gera o scroll automaticamente. Ir no discord pra ver a estilização do scroll*/
+    padding-right: 15px;
+    /*
+        Se o texto do Sobre for muito grande
+        o cartão vai ficar muito grande. 
+        O "max-height" limita uma altura.
+    */
+}
+
+.informacoes-abas .descricao span{
+    color: #02d08f;
+}
+
+.redes-sociais li a{ 
+    /*
+         o Display do link ou do "a" é padrão é display inline. 
+         Não dá pra mexer na largura/altura em dislay inline. 
+         Então é preciso mudar o display para "display: block". 
+    */
+    background-color: red;
+    width: 250px;
+    display: block;
+    color: #f3f3f3;
+    text-align: center;
+    padding: 10px;
+    font-size: 20px;
+    transition: opacity 0.9s ease-in-out;
+}
+
+.redes-sociais{
+    display: flex; /* Deixar lado a lado*/
+    flex-direction: column; /* Transformar em uma coluna*/
+    gap: 25px; /* Espaçar entre os links das redes sociais*/
+    align-items: center;
+    max-height: 180 qpx;
+    overflow: auto;
+}
+
+/*
+    "max-height" estabelece o altura máxima. (Foi usado porque usei mais de 3 links.)
+    "over-flow: auto" cria uma scrollbar para poder visualizar elementos que tenham passado do "max-height".
+*/
+
+
+.redes-sociais .curriculo{
+    background-color: #06c185;
+}
+
+.redes-sociais .linkedin{
+    background-color: #1d87db;
+}
+
+.redes-sociais .github{
+    background-color: #545454;
+}
+
+.redes-sociais li a:hover{ /* para quando o mouse passar em cima mudar a opacidade levemente.*/
+    opacity: 0.4;
+}
+
+/* 
+    "hover" serve para suavizar a cor quando o mouse passar por cima
+    Quando somado a um "transition" 
+*/
+
+
+
